@@ -51,6 +51,14 @@ if os.path.exists('./data/ESC-50-master') == False:
     for audio in audio_list:
         print('sox ' + base_dir + '/audio/' + audio + ' -r 16000 ' + base_dir + '/audio_16k/' + audio)
         os.system('sox ' + base_dir + '/audio/' + audio + ' -r 16000 ' + base_dir + '/audio_16k/' + audio)
+#   add sox
+# else:
+#     # convert the audio to 16kHz
+#     base_dir = './data/ESC-50-master/'
+#     audio_list = get_immediate_files('./data/ESC-50-master/audio')
+#     for audio in audio_list:
+#         print('sox ' + base_dir + '/audio/' + audio + ' -r 16000 ' + base_dir + '/audio_16k/' + audio)
+#         os.system('sox ' + base_dir + '/audio/' + audio + ' -r 16000 ' + base_dir + '/audio_16k/' + audio)
 
 label_set = np.loadtxt('./data/esc_class_labels_indices.csv', delimiter=',', dtype='str')
 label_map = {}

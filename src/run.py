@@ -52,6 +52,7 @@ parser.add_argument("--fstride", type=int, default=10, help="soft split freq str
 parser.add_argument("--tstride", type=int, default=10, help="soft split time stride, overlap=patch_size-stride")
 parser.add_argument('--imagenet_pretrain', help='if use ImageNet pretrained audio spectrogram transformer model', type=ast.literal_eval, default='True')
 parser.add_argument('--audioset_pretrain', help='if use ImageNet and audioset pretrained audio spectrogram transformer model', type=ast.literal_eval, default='False')
+parser.add_argument("--model_type", type=str, default='base384', help="the model used")
 
 parser.add_argument("--dataset_mean", type=float, default=-4.2677393, help="the dataset spectrogram mean")
 parser.add_argument("--dataset_std", type=float, default=4.5689974, help="the dataset spectrogram std")
@@ -130,9 +131,10 @@ if args.model == 'ast':
         dataloader.AudiosetDataset(args.data_val, label_csv=args.label_csv, audio_conf=val_audio_conf),
         batch_size=args.batch_size*2, shuffle=False, num_workers=args.num_workers, pin_memory=True)
 
+    # base384 to tiny224
     audio_model = models.ASTModel(label_dim=args.n_class, fstride=args.fstride, tstride=args.tstride, input_fdim=128,
                                   input_tdim=args.audio_length, imagenet_pretrain=args.imagenet_pretrain,
-                                  audioset_pretrain=args.audioset_pretrain, model_size='base384')
+                                  audioset_pretrain=args.audioset_pretrain, model_size=args.model_type)
 
 print("\nCreating experiment directory: %s" % args.exp_dir)
 os.makedirs("%s/models" % args.exp_dir)

@@ -1,0 +1,13 @@
+# python 3.11
+llvmlite
+matplotlib
+numba
+numpy
+scikit-learn
+scipy
+timm==0.4.5
+torch==2.0.1
+torchaudio==2.0.2
+torchvision==0.15.2
+wget
+zipp

@@ -1,0 +1,7 @@
+--------------Result Summary--------------
+Fold 0 accuracy: 0.9167
+Fold 1 accuracy: 1.0000
+Fold 2 accuracy: 0.9375
+Fold 3 accuracy: 0.9583
+Fold 4 accuracy: 1.0000
+The averaged accuracy of 5 folds is 0.963

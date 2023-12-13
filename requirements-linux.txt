@@ -1,0 +1,15 @@
+# python 3.11
+llvmlite
+matplotlib
+numba
+numpy
+scikit-learn
+scipy
+timm==0.4.5
+torch==1.8.1
+torchaudio==0.8.1
+torchvision==0.10.0
+wget
+zipp
+sox
+PySoundFile
