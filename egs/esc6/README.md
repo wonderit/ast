@@ -64,6 +64,11 @@ The averaged accuracy of 5 folds is 0.963
 ## Inference ESC-6 Recipe
 check [AST_Inference_Demo_esc6.ipynb](AST_Inference_Demo_esc6.ipynb)
 
+add sample model from google drive : 
+https://drive.google.com/file/d/10g6LHmn4LJkx0Kt8xk_Q5ATo_EXyMblm/view?usp=sharing
+
+copy folder name `tiny224-esc6-f10-t10-impTrue-aspFalse-b8-lr1e-4` to `egs/esc6/exp/tiny224-esc6-f10-t10-impTrue-aspFalse-b8-lr1e-4`
+
 result for `'./data/audio-one-dir/1-17124-A.wav'`
 ```text
 Predice results:
