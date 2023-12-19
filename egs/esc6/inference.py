@@ -51,8 +51,6 @@ def make_features(wav_name, mel_bins, target_length=1024):
         waveform, htk_compat=True, sample_frequency=sr, use_energy=False,
         window_type='hanning', num_mel_bins=mel_bins, dither=0.0, frame_shift=10)
 
-    print('sr', sr, fbank.shape)
-
     n_frames = fbank.shape[0]
 
     p = target_length - n_frames
@@ -107,11 +105,9 @@ sample_audio_path = './data/audio-one-dir/1-17124-A.wav'
 # sample_audio_path = './data/audio-one-dir/1-115920-B.wav'
 
 feats = make_features(sample_audio_path, mel_bins=128, target_length=input_tdim)           # shape(1024, 128)
-print(feats.shape)
 feats_data = feats.expand(1, input_tdim, 128)           # reshape the feature
 feats_data = feats_data.to(torch.device("cpu"))
 # do some masking of the input
-print(feats_data.shape)
 # feats_data[:, :512, :] = 0.
 
 # Make the prediction
